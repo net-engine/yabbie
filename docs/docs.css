@@ -1,0 +1,102 @@
+
+html {
+  font: 400 18px/1.5em Alegreya, Georgia, serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url(images/lightpaperfibers.png);
+}
+
+.container {
+  padding: 1.5em;
+  width: auto;
+  max-width: 60em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+a {
+  color: tomato;
+}
+
+a:hover {
+  color: dimgray;
+  cursor: pointer;
+}
+
+.logo {
+  width: 25em;
+  margin-bottom: 1.5em;
+}
+
+header {
+  text-align: center;
+  font-size: 1.25em;
+}
+
+header .button {
+  margin: 0 .25em;
+}
+
+.share-links {
+  margin: 2em 0 0;
+}
+
+section {
+  padding: 1em 0;
+}
+
+section h2 {
+  margin-bottom: 1.25em
+}
+
+section h2:before {
+  content: '\261E';
+  margin-right: .5em;
+}
+
+section h2:after {
+  content: '\261C';
+  margin-left: .5em;
+}
+
+pre {
+  background: oldlace;
+  border: thin solid wheat;
+  border-radius: .15em;
+  padding: .5em .75em;
+}
+
+.button {
+  display: inline-block;
+  padding: .25em .75em;
+  background: tomato;
+  color: white;
+  text-decoration: none;
+  border-radius: .125em;
+}
+
+.button:hover {
+  background: dimgray;
+  color: white
+}
+
+.outline-button {
+  background: transparent;
+  border: .125em solid tomato;
+  color: tomato;
+}
+
+.outline-button:hover {
+  background: transparent;
+  color: tomato;
+  border-color: dimgrey;
+}
+
+footer {
+  text-align: center;
+}

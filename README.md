@@ -29,7 +29,7 @@ For more usage, please investigate in the code while we don't build a nice READM
 
 ## Roadmap
 
-1. Add tests, sorry for that. :)
+1. Add more tests! :)
 
 ## And the oscar goes to...
 

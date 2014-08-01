@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yabbie</title>
+
+  <!-- Twitter -->
+  <meta content="@useoutfit" name="twitter:site">
+  <meta content="summary" name="twitter:card">
+  <meta content="Yabbie" name="Yabbie">
+  <meta content="Yabbie, like Shrimp for PhantomJS, but for SlimerJS" name="twitter:description">
+
+  <meta name="description" content="Yabbie, like Shrimp for PhantomJS, but for SlimerJS.">
+  <meta name="keywords" content="Yabbie, SlimerJS, Shrimp, PhantomJS, Firefox">
+
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+  <!-- <link rel="icon" href="favicon.ico"> -->
+  <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/1.2/skeleton.min.css">
+  <link rel="stylesheet" type="text/css" href="docs.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img class='logo' src="images/yabbie.png">
+
+      <h1>Yabbie</h1>
+
+      <p>Yabbie is a gem to wrap SlimerJS.</p>
+
+      <div>
+        <a target="_blank" href="https://github.com/net-engine/yabbie" class="button">Source</a>
+        <a rel="external" href="https://github.com/net-engine/yabbie/archive/master.zip" class="button">Download</a>
+      </div>
+
+      <div class="share-links">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-text="Yabbie, like Shrimp for PhantomJS, but for SlimerJS">Tweet</a>
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        <iframe src="http://ghbtns.com/github-btn.html?user=net-engine&repo=yabbie&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+      </script>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <section id="installation" class="section">
+        <h2><a href="#installation">Installation</a></h2>
+
+        <p>Add this line to your application's Gemfile:</p>
+
+        <pre><code>gem 'yabbie', github: 'net-engine/yabbie'</code></pre>
+
+        <p>And then execute:</p>
+
+        <pre><code>$ bundle</code></pre>
+
+        <p>Or install it yourself as:</p>
+
+        <pre><code>$ gem install yabbie</code></pre>
+      </section>
+
+      <section id="dependency" class="section">
+        <h2><a href="#dependency">Dependency</a></h2>
+
+        <p>It relies on <a href="http://slimerjs.org">SlimerJS</a>, and a script that contains what you want to achieve.
+        For the script, you can check our <a href="https://github.com/net-engine/yabbie/blob/master/lib/yabbie/default.js">default.js</a>. It does nothing but takes a png snapshot. It is just so that Yabbie does not fail if you don't provide one. Please don't rely on it.</p>
+
+      </section>
+
+      <section id="usage" class="section">
+        <h2><a href="#usage">Usage</a></h2>
+
+        <pre><code>Yabbie::Slimer.new(html_file, options).to_file(file)</code></pre>
+
+        <p>For more usage, please investigate in the code while we don't build a nice README</p>
+
+      </section>
+
+      <section id="roadmap" class="section">
+        <h2><a href="#roadmap">Roadmap</a></h2>
+
+        <ol>
+          <li>Add more tests! :)</li>
+        </ol>
+
+      </section>
+
+      <section id="inspiration" class="section">
+        <h2><a href="#inspiration">And the oscar goes to...</a></h2>
+
+        <p>This gem is inspired on <a href="https://github.com/adjust/shrimp">Shrimp</a> gem.</p>
+
+        <p>A huge thanks to all Shrimp contributors.</p>
+
+      </section>
+
+      <section id="contributing" class="section">
+        <h2><a href="#contributing">Contributing</a></h2>
+
+        <ol>
+          <li><a href="https://github.com/net-engine/yabbie/fork">Fork it</a></li>
+          <li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+          <li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+          <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+          <li>Create a new Pull Request</li>
+        </ol>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        Built by <a href="http://netengine.com.au">NetEngine</a> for <a href="http://useoutfit.com/">Outfit</a>.
+
+        Licence: <a href="https://github.com/net-engine/yabbie/blob/master/LICENSE.txt">MIT</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
