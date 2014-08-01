@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.requirements  << 'slimerjs, v0.10 or greater'
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", "~> 10.3"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "pry-meta", "~> 0.0.7"
+  spec.add_development_dependency "pry-meta", "~> 0.0"
 end
