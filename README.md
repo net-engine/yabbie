@@ -48,3 +48,4 @@ A huge thanks to all Shrimp contributors.
 ## License
 
 MIT
+
