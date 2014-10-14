@@ -20,7 +20,7 @@ module Yabbie
         height:          600,
         error_log_file:  Dir.tmpdir + "/log/yabbie_error.log",
         prepend_command: '',
-        script:          'default.js'
+        script:          File.expand_path('../default.js', __FILE__)
       }
     end
 
