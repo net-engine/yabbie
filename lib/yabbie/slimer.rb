@@ -1,4 +1,5 @@
 require 'shellwords'
+require 'digest/md5'
 
 module Yabbie
   class Slimer
