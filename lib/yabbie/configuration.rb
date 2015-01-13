@@ -4,7 +4,7 @@ module Yabbie
   class Configuration
     attr_accessor :default_options
 
-    [:format, :tmpdir, :timeout, :config_file, :error_log_file, :width, :height, :prepend_command, :script].each do |m|
+    [:format, :tmpdir, :timeout, :config_file, :error_log_file, :width, :height, :prepend_command, :script, :slimerjs].each do |m|
       define_method("#{m}=") do |val|
         @default_options[m] = val
       end
@@ -20,12 +20,9 @@ module Yabbie
         height:          600,
         error_log_file:  Dir.tmpdir + "/log/yabbie_error.log",
         prepend_command: '',
-        script:          File.expand_path('../default.js', __FILE__)
+        script:          File.expand_path('../default.js', __FILE__),
+        slimerjs:        `which slimerjs`.chomp
       }
-    end
-
-    def slimerjs
-      @slimerjs ||= `which slimerjs`.chomp
     end
   end
 
