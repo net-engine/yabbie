@@ -10,7 +10,7 @@ module Yabbie
       @source  = Source.new(url_or_file)
       @options = Yabbie.configuration.default_options.merge(opts)
 
-      raise NoExecutableError.new unless command?(options[:slimerjs])
+      raise NoExecutableError.new(options[:slimerjs]) unless command?(options[:slimerjs])
     end
 
     def run
@@ -90,11 +90,11 @@ module Yabbie
     end
 
     def command_config_file
-      options[:config_file].present? ? "--config=#{options[:config_file]}" : nil
+      options[:config_file].empty? ? nil : "--config=#{options[:config_file]}"
     end
 
     def command_error_log
-      options[:error_log_file].present? ? "--error-log-file=#{options[:error_log_file]}" : nil
+      options[:error_log_file].empty? ? nil : "--error-log-file=#{options[:error_log_file]}"
     end
 
     def outfile
@@ -106,7 +106,7 @@ module Yabbie
     end
 
     def command?(name)
-      `which #{name}`.present?
+      !`which #{name}`.empty?
     end
   end
 end

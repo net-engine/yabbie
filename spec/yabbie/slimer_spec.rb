@@ -11,26 +11,24 @@ describe Yabbie::Slimer do
       height:          10,
       format:          'pdf',
       tmpdir:          '/tmp',
-      timeout:         10
+      timeout:         10,
+      slimerjs:        '/usr/bin/slimerjs'
     }
   }
 
   subject { described_class.new('http://google.com', options) }
 
-  before(:each) do
-    # Assume slimerjs is installed
-    allow(File).to receive(:exists?).and_return(true)
-    allow(Yabbie.configuration).to receive(:slimerjs).and_return('/usr/bin/slimerjs')
+  before do
     allow(Digest::MD5).to receive(:hexdigest).and_return('md5')
   end
 
   describe 'initialization' do
     context 'when slimerjs is not present in the system' do
       it 'raises no executable error' do
-        allow(File).to receive(:exists?).and_return(false)
+        allow_any_instance_of(described_class).to receive(:`).and_return('')
 
         expect {
-          described_class.new('http://google.com')
+          described_class.new('http://google.com', options)
         }.to raise_error(Yabbie::NoExecutableError)
       end
     end

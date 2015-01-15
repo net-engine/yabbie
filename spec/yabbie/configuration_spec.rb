@@ -3,10 +3,6 @@ require 'spec_helper'
 describe Yabbie::Configuration do
   subject { described_class.new }
 
-  before do
-    allow(subject).to receive(:`).with('which slimerjs').and_return('/usr/bin/slimerjs')
-  end
-
   describe 'accessors' do
     context 'when values are not provided' do
       it 'falls back to defaults' do
@@ -14,12 +10,12 @@ describe Yabbie::Configuration do
           format:          'png',
           tmpdir:          Dir.tmpdir,
           timeout:         120000,
-          config_file:     File.expand_path('../config.json', __FILE__),
+          config_file:     File.expand_path('../../../lib/yabbie/config.json', __FILE__),
           width:           600,
           height:          600,
           error_log_file:  Dir.tmpdir + "/log/yabbie_error.log",
           prepend_command: '',
-          script:          File.expand_path('../default.js', __FILE__),
+          script:          File.expand_path('../../../lib/yabbie/default.js', __FILE__),
           slimerjs:        `which slimerjs`.chomp
         }
 

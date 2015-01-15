@@ -1,7 +1,7 @@
 module Yabbie
   class NoExecutableError < StandardError
-    def initialize
-      msg = "No slimerjs executable found at #{Yabbie.configuration.slimerjs}\n"
+    def initialize(executable = nil)
+      msg = "No slimerjs executable found at #{executable}\n"
       msg << ">> Please install slimerjs"
       super(msg)
     end
