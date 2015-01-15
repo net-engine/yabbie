@@ -44,6 +44,9 @@ module Yabbie
     def render(path = nil)
       @outfile = File.expand_path(path) if path
       self.run
+
+      raise Yabbie::RenderingError.new(@error) if @error
+
       @outfile
     end
 
