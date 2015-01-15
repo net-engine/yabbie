@@ -6,11 +6,11 @@ module Yabbie
     attr_accessor :source, :configuration
     attr_reader :options, :result, :error
 
-    def initialize(url_or_file, options = {})
+    def initialize(url_or_file, opts = {})
       @source  = Source.new(url_or_file)
-      @options = Yabbie.configuration.default_options.merge(options)
+      @options = Yabbie.configuration.default_options.merge(opts)
 
-      raise NoExecutableError.new unless File.exists?(Yabbie.configuration.slimerjs)
+      raise NoExecutableError.new unless command?(options[:slimerjs])
     end
 
     def run
@@ -28,7 +28,7 @@ module Yabbie
     def cmd
       [
         prepend_command,
-        Yabbie.configuration.slimerjs,
+        slimerjs,
         command_config_file,
         command_error_log,
         script,
@@ -82,12 +82,16 @@ module Yabbie
       options[:prepend_command]
     end
 
+    def slimerjs
+      options[:slimerjs]
+    end
+
     def command_config_file
-      "--config=#{options[:config_file]}"
+      options[:config_file].present? ? "--config=#{options[:config_file]}" : nil
     end
 
     def command_error_log
-      "--error-log-file=#{options[:error_log_file]}"
+      options[:error_log_file].present? ? "--error-log-file=#{options[:error_log_file]}" : nil
     end
 
     def outfile
@@ -96,6 +100,10 @@ module Yabbie
       else
         "#{options[:tmpdir]}/#{Digest::MD5.hexdigest((Time.now.to_i + rand(9001)).to_s)}.#{format}"
       end
+    end
+
+    def command?(name)
+      `which #{name}`.present?
     end
   end
 end
