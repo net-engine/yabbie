@@ -1,6 +1,10 @@
-# Yabbie
+# Yabbie <img src="https://travis-ci.org/net-engine/yabbie.svg" title="Travis CI Status" style="margin-left: 0.25em;">
+
 
 Yabbie is a gem to wrap SlimerJS.
+
+<img src="http://net-engine.github.io/yabbie/images/yabbie.png" alt="Yabbie" height="100">
+
 
 ## Installation
 
