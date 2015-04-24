@@ -64,6 +64,15 @@ section h2:after {
   margin-left: .5em;
 }
 
+ul, ol {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style-position: inside;
+}
+
 pre {
   background: oldlace;
   border: thin solid wheat;
